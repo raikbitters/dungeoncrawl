@@ -7,3 +7,10 @@ pub struct MapBuilder {
     pub rooms: Vec<Rect>,
     pub player_start: Point,
 }
+
+impl MapBuilder {
+    fn fill(&mut self, tile: TileType) {
+        self.map.tiles.iter_mut().for_each(|t| *t = tile);
+    }
+}
+
