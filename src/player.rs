@@ -17,7 +17,7 @@ impl Player {
             self.position.y,
             WHITE,
             BLACK,
-            to_cp437('☻')
+            to_cp437('@')
         )
     }
 
