@@ -10,6 +10,9 @@ mod prelude {
     pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;
     
     pub use bracket_lib::prelude::*;
+    pub use legion::*;
+    pub use legion::world::SubWorld;
+    pub use legion::systems::CommandBuffer;
     pub use crate::map::*;
     pub use crate::player::*;
     pub use crate::map_builder::*;
@@ -29,7 +32,7 @@ impl State {
         let mut rng = RandomNumberGenerator::new();
         let map_builder = MapBuilder::new(&mut rng);
     
-        Self { 
+        Self {
             map: map_builder.map,
             player: Player::new(map_builder.player_start),
             camera: Camera::new(map_builder.player_start),
