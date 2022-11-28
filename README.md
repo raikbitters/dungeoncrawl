@@ -20,7 +20,11 @@ The hero must venture into the dungeon to find the source of the plague and dest
 
 ## Minimum Viable Product
 
+1. ...
+
 ## Stretch Goals
+
+1. ...
 
 ## Component composition
 
