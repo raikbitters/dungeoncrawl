@@ -5,15 +5,21 @@ mod camera;
 mod spawner;
 
 mod prelude {
+    // Re-export all the important stuff
     pub const SCREEN_WIDTH: i32 = 80;
     pub const SCREEN_HEIGHT: i32 = 50;
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
     pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;
     
+    // Bracket-Lib prelude
     pub use bracket_lib::prelude::*;
+    
+    // Legion prelude
     pub use legion::*;
     pub use legion::world::SubWorld;
     pub use legion::systems::CommandBuffer;
+
+    // Components prelude
     pub use crate::map::*;
     pub use crate::map_builder::*;
     pub use crate::camera::*;
