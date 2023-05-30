@@ -46,7 +46,7 @@ impl State {
 
         let mut rng = RandomNumberGenerator::new();
         let map_builder = MapBuilder::new(&mut rng);
-        
+
         spawn_player(&mut ecs, map_builder.player_start);
 
         map_builder.rooms
@@ -58,7 +58,7 @@ impl State {
         resources.insert(map_builder.map);
         resources.insert(Camera::new(map_builder.player_start));
         resources.insert(TurnState::AwaitingInput);
-        
+
         Self {
             ecs,
             resources,
@@ -73,11 +73,11 @@ impl GameState for State {
         ctx.cls();
         ctx.set_active_console(1);
         ctx.cls();
-        
+
         // Execute Systems
         self.resources.insert(ctx.key);
         self.systems.execute(&mut self.ecs, &mut self.resources);
-        
+
         // Render Draw Buffer
         render_draw_buffer(ctx).expect("Render Error");
     }
