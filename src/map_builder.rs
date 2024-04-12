@@ -1,6 +1,7 @@
 use crate::prelude::*;
 
 const NUM_ROOMS: usize = 20;
+const UNREACHABLE: &f32 = &f32::MAX;
 
 pub struct MapBuilder {
     pub map: Map,
@@ -105,7 +106,6 @@ impl MapBuilder {
             1024.0
         );
 
-        const UNREACHABLE: &f32 = &f32::MAX;
         mb.amulet_start = mb.map.index_to_point2d(
             dijkstra_map.map
                 .iter()
